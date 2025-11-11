@@ -1,126 +1,235 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* about.css
+   Detailed styling to match the provided page replica:
+   - precise image sizes, overlay banner, mission overlay box with shadow
+   - dark blue section bars with centered titles
+   - footer layout with large social icons and subtle hover transforms
+   Author: Susan Student
+*/
 
+/* ---------- Reset & base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #333;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: #222;
+  background: #fff;
   line-height: 1.6;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-  background-color: #ffffff;
+/* ---------- Header (logo top-left + vertical nav) ---------- */
+.site-header {
+  background: #ffffff;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo-and-nav {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* logo size as in screenshot (approx) */
 .logo {
   width: 120px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
-nav a {
+/* vertical nav list under logo */
+.side-nav ul {
+  list-style: disc;
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+.side-nav a {
+  color: #0b3b6b;
   text-decoration: none;
-  color: #003366;
-  margin: 0 15px;
-  font-weight: bold;
+  display: inline-block;
+  margin: 8px 0;
+  font-weight: 600;
 }
 
-nav a:hover, nav a.active {
+.side-nav a:hover,
+.side-nav a.active {
+  color: #1b6fb3;
   text-decoration: underline;
-  color: #0066cc;
 }
 
+/* ---------- HERO ---------- */
 .hero {
   position: relative;
-  text-align: center;
+  max-width: 1100px;
+  margin: 22px auto;
+  overflow: visible;
 }
 
-.hero-image {
+/* hero image exact width (full container) and specific height */
+.hero-img {
   width: 100%;
-  height: 450px;
+  height: 520px;               /* tall hero like screenshot */
   object-fit: cover;
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
 
-.hero h1 {
+/* banner text across top of image */
+.hero-banner {
   position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2.5rem;
-  background-color: rgba(0, 0, 80, 0.6);
-  padding: 10px 30px;
-  border-radius: 5px;
-}
-
-.mission {
-  position: absolute;
-  bottom: 10%;
+  top: 34px;                   /* distance from top similar to screenshot */
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 60, 0.7);
-  color: white;
-  width: 90%;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 5px;
+  background-color: rgba(6, 48, 85, 0.78); /* deep blue translucent */
+  color: #fff;
+  padding: 10px 70px;
+  font-family: "Fredoka One", sans-serif;
+  font-size: 42px;             /* large centered heading */
+  letter-spacing: 1px;
+  border-radius: 2px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
 }
 
-.mission p {
-  width: 80%;
+/* mission overlay box positioned near the bottom of hero image */
+.mission-box {
+  position: absolute;
+  bottom: 22px;                /* sits inside hero near bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 86%;
+  background: rgba(13, 43, 76, 0.8);  /* dark bluish translucent */
+  color: #fff;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(6,20,30,0.6); /* strong shadow like screenshot */
+}
+
+/* paragraph text inside mission */
+.mission-box p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.95);
+  margin: 0;
+}
+
+/* small right-side image inside mission box */
+.mission-thumb {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 4px solid rgba(255,255,255,0.12);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.35);
+}
+
+/* ---------- SECTION TITLES (dark blue bars) ---------- */
+.section-title {
+  display: inline-block;
+  font-family: "Fredoka One", sans-serif;
+  background-color: #0b2a64;  /* dark navy bar */
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 20px;
+  border-radius: 2px;
+  box-shadow: inset 0 -6px 0 rgba(0,0,0,0.12), 0 4px 6px rgba(0,0,0,0.08);
+  margin: 30px auto 12px;
+}
+
+/* section container look and spacing */
+.history-section,
+.adventure-section {
+  max-width: 1100px;
+  margin: 22px auto;
+  padding: 0 18px 26px 18px;
+}
+
+/* history paragraph area */
+.history-section .section-body p {
+  margin-top: 18px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #222;
+  font-size: 15px;
   text-align: left;
 }
 
-.client-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-  object-fit: cover;
+/* shorter adventure block with white space like screenshot */
+.adventure-section .section-body.small {
+  height: 80px;               /* discrete empty area */
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.06);
 }
 
-section {
-  padding: 40px;
-  text-align: center;
-}
-
-section h2 {
-  background-color: #0b2a64;
-  color: white;
-  padding: 10px;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
-section p {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
+/* ---------- FOOTER ---------- */
 footer {
-  background-color: #0b2a64;
-  color: white;
-  text-align: center;
-  padding: 20px;
+  margin-top: 28px;
+  padding: 18px 0 36px;
+  background: #fff;
+  width: 100%;
 }
 
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #222;
+}
+
+/* social icons bigger and styled */
 .socialmedia {
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .socialmedia a img {
-  width: 30px;
-  height: 30px;
-  margin: 0 8px;
-  transition: transform 0.3s;
+  width: 46px;               /* large icons like screenshot */
+  height: 46px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s;
 }
 
 .socialmedia a img:hover {
-  transform: scale(1.1);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+}
+
+/* ---------- Responsive adjustments ---------- */
+@media (max-width: 900px) {
+  .hero-img { height: 420px; }
+  .hero-banner { font-size: 34px; padding: 8px 48px; top: 28px; }
+  .mission-box { width: 92%; padding: 16px; gap: 12px; bottom: 16px; }
+  .mission-thumb { width: 90px; height: 70px; }
+  .logo { width: 100px; }
+}
+
+@media (max-width: 560px) {
+  .hero-img { height: 360px; }
+  .hero-banner { font-size: 26px; padding: 6px 26px; top: 18px; }
+  .mission-box { flex-direction: column; align-items: flex-start; text-align: left; gap: 10px; }
+  .mission-box p { font-size: 14px; }
+  .mission-thumb { width: 120px; height: 80px; align-self: center; }
+  .header-inner { padding-left: 12px; }
+  .side-nav ul { margin-left: 12px; }
+  .footer-inner { flex-direction: column; gap: 12px; }
 }
